@@ -16,8 +16,8 @@ const SignUp = ({ touched, errors, status }) => {
     <Container>
       <MainBox>
         <Onboard>
-            <div><h2>Sign-In</h2></div>
-            <div><h2>Register</h2></div>
+            <div><p>Sign-In</p></div>
+            <div><p>Register</p></div>
         </Onboard>
         <Form>
           <InputBox>
@@ -107,6 +107,7 @@ const Container = styled.div`
   justify-content: center;
   max-width: 600px;
   min-width: 350px;
+  font-weight: 200;
 `;
 
 const MainBox = styled.div`
@@ -130,6 +131,7 @@ const InputBox = styled.div`
     border: 1px solid #fff;
     border-radius: 5px;
     font-size: 24px;
+    font-weight: 200;
     width: 100%;
     :focus {
         outline: none;
@@ -143,6 +145,7 @@ const CheckContainer = styled.div`
   flex-flow: row nowrap;
   align-items: center;
   font-size: 18px;
+  
   & input {
     position: relative;
     top: 1px;
@@ -161,10 +164,12 @@ const SubmitButton = styled.button`
     text-align: center;
     border-radius: 10px;
     border: 1px solid #fff;
+    font-weight: 200;
     transition: 0.5s;
     &:hover {
         border: 1px solid #fd6600;
         background: #f5f6ee;
+        font-weight: 300;
     }
     &:focus {
         outline: none;
@@ -181,8 +186,16 @@ const Onboard = styled.div`
     margin: 20px 0;
     & div {
         width: 50%;
-        font-size: 20px;
+        font-size: 22px;
         font-weight: 200;
+        text-align: center;
+    }
+    & div:first-child {
+        border-right: 1px solid black;
+        margin-left: 80px;
+    }
+    & div:last-child {
+        margin-right: 80px;
     }
 
 `;

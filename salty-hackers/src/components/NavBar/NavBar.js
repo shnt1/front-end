@@ -56,6 +56,7 @@ const NavBar = styled(animated.nav)`
   background: #F5F6EE;
   z-index: 1;
   font-size: 1.4rem;
+  border-bottom: 1px solid #FD6600;
 `;
 
 const FlexContainer = styled.div`
