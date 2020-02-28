@@ -22,12 +22,13 @@ const Navbar = (props) => {
   return (
     <>
       <NavBar style={barAnimation}>
-        <FlexContainer>
+      <FlexContainer>
           <Brand />
+          
           <NavLinks style={linkAnimation}>
-            <a href="/">Link1</a>
-            <a href="/">Link2</a>
-            <a href="/">Link3</a>
+            <a href="/">About</a>
+            <a href="/">Sign-In</a>
+            <a href="/">App</a>
           </NavLinks>
           <BurgerWrapper>
             <BurgerMenu
@@ -58,11 +59,20 @@ const NavBar = styled(animated.nav)`
 `;
 
 const FlexContainer = styled.div`
-  max-width: 120rem;
+  max-width: 180rem;
   display: flex;
   margin: auto;
   padding: 0 2rem;;
   justify-content: space-between;
+  height: 5rem;
+`;
+
+const BrandContainer = styled.div`
+  max-width: 120rem;
+  display: flex;
+  margin: auto;
+  padding: 0 2rem;;
+  justify-content: flex-start;
   height: 5rem;
 `;
 
