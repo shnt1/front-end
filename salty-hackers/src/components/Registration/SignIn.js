@@ -4,7 +4,7 @@ import axios from "axios";
 import { withFormik, Form, Field, FieldArray } from "formik";
 import * as yup from "yup";
 
-const SignUp = ({ touched, errors, status }) => {
+const SignIn = ({ touched, errors, status }) => {
   const [user, setUser] = useState([]);
 
   console.log("user", user);
@@ -38,31 +38,9 @@ const SignUp = ({ touched, errors, status }) => {
             </label>
           </InputBox>
 
-          <InputBox>
-            <label>
-              <Field
-                type="password"
-                name="confirm"
-                placeholder="confirm password"
-              />
-              {touched.confirm && errors.confirm && (
-                <p className="errors">{errors.confirm}</p>
-              )}
-            </label>
-          </InputBox>
+          
 
-          <CheckContainer>
-            <label>
-              
-              <Field type="checkbox" name="terms" />
-              {touched.checkbox && errors.checkbox && (
-                <p className="errors">{errors.checkbox}</p>
-              )}
-              By clicking here, you accept our terms of service.
-            </label>
-          </CheckContainer>
-
-          <SubmitButton>Register</SubmitButton>
+          <SubmitButton>Sign In</SubmitButton>
         </Form>
       </MainBox>
     </Container>
@@ -74,15 +52,11 @@ export default withFormik({
     id: Date.now(),
     name: "",
     password: "",
-    confirm: "",
     terms: false
   }),
   validationSchema: yup.object().shape({
     name: yup.string().required("Your name is required!"),
-    password: yup.string().required("Password is required!"),
-    confirm: yup
-      .string()
-      .oneOf([yup.ref("password"), null], "Passwords must match"),
+    password: yup.string().required("Password is required!"),  
     checkbox: yup.bool().oneOf([true], "You must accept the terms of service")
   }),
   handleSubmit: (values, { resetForm, setStatus }) => {
@@ -97,7 +71,7 @@ export default withFormik({
       })
       .catch(err => console.log(err.response));
   }
-})(SignUp);
+})(SignIn);
 
 const Container = styled.div`
   margin: 100px auto;
@@ -157,7 +131,7 @@ const CheckContainer = styled.div`
 `;
 
 const SubmitButton = styled.button`
-    
+    margin-top: 15px;
     padding: 5px 10px;
     font-size: 20px;
     text-align: center;
