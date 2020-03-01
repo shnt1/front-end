@@ -29,7 +29,7 @@ const Navbar = (props) => {
             <Link to={'/'}>About</Link>
             <Link to={'/'}>Sign-In</Link>
             <Link to={'/register'}>Register</Link>
-            <Link to={'/'}>App</Link>
+            <Link to={'/app'}>App</Link>
           </NavLinks>
           <BurgerWrapper>
             <BurgerMenu
