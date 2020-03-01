@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import { withFormik, Form, Field, FieldArray } from "formik";
+import { withFormik, Form, Field } from "formik";
 import * as yup from "yup";
+import { Link } from "react-router-dom";
 
 const SignIn = ({ touched, errors, status }) => {
   const [user, setUser] = useState([]);
@@ -16,8 +17,8 @@ const SignIn = ({ touched, errors, status }) => {
     <Container>
       <MainBox>
         <Onboard>
-            <div><p>Sign-In</p></div>
-            <div><p>Register</p></div>
+            <div><p><Link to={'/'}>Sign-In</Link></p></div>
+            <div><p><Link to={'/register'}>Register</Link></p></div>
         </Onboard>
         <Form>
           <InputBox>
@@ -171,6 +172,14 @@ const Onboard = styled.div`
     }
     & div:last-child {
         margin-right: 80px;
+    }
+    & a {
+        text-decoration: none;
+        color: black;
+        &:hover {
+      
+            border-bottom: 1px solid #FD6600;
+          }
     }
 
 `;

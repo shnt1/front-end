@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
 import { useSpring, animated, config } from "react-spring";
-
+import { Link } from "react-router-dom";
 import Brand from "./Brand";
 import BurgerMenu from "./BurgerMenu";
 import CollapseMenu from "./CollapseMenu";
@@ -26,9 +26,10 @@ const Navbar = (props) => {
           <Brand />
           
           <NavLinks style={linkAnimation}>
-            <a href="/">About</a>
-            <a href="/">Sign-In</a>
-            <a href="/">App</a>
+            <Link to={'/'}>About</Link>
+            <Link to={'/'}>Sign-In</Link>
+            <Link to={'/register'}>Register</Link>
+            <Link to={'/'}>App</Link>
           </NavLinks>
           <BurgerWrapper>
             <BurgerMenu
@@ -94,7 +95,7 @@ const NavLinks = styled(animated.ul)`
 
     &:hover {
       
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid #FD6600;
     }
 
     @media (max-width: 768px) {
