@@ -26,7 +26,7 @@ const Navbar = (props) => {
           <Brand />
           
           <NavLinks style={linkAnimation}>
-            <Link to={'/'}>About</Link>
+            
             <Link to={'/'}>Sign-In</Link>
             <Link to={'/register'}>Register</Link>
             <Link to={'/app'}>App</Link>

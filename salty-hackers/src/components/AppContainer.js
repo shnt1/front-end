@@ -25,6 +25,6 @@ const AppContainer = () => {
 
   const Container = styled.div`
     width: 80%;
-    margin: 200px auto 0;
+    margin: 180px auto 0;
     position: relative;
   `

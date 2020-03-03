@@ -16,7 +16,7 @@ const CollapseMenu = (props) => {
       }}
       >
         <NavLinks>
-          <li><Link to={'/'}>About</Link></li>
+          
             <li><Link to={'/'}>Sign-In</Link></li>
             <li><Link to={'/register'}>Register</Link></li>
             <li><Link to={'/'}>App</Link></li>
