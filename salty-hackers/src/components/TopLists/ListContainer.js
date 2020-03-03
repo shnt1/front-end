@@ -26,8 +26,8 @@ const ListBox = styled.div`
     display: flex;
     flex-flow: column nowrap;
     padding: 20px;
-    position: relative;
-    top: 250px;
+    // position: relative;
+    // top: 260px;
     align-items: center;
     border-radius: 5px;
     border: 1px solid #FD6600;

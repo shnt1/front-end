@@ -31,16 +31,18 @@ export default CollapseMenu;
 
 const CollapseWrapper = styled(animated.div)`
   background: #2d3436;
+  z-index: 99;
   font-weight: 200;
   position: fixed;
   top: 4.5rem;
   left: 0;
   right: 0;
+  padding-bottom: 0;
 `;
 
 const NavLinks = styled.ul`
   list-style-type: none;
-  padding: 2rem 1rem 2rem 2rem;
+  padding: 1rem 1rem 1rem 2rem;
 
   & li {
     transition: all 300ms linear 0s;

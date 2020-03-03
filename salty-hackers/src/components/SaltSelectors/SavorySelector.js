@@ -5,7 +5,7 @@ const SavorySelector = () => {
 
     return (
         <Box>
-            <p>Top 50 Savory Hackers</p>
+            <p>Top Savory Hackers</p>
         </Box>
         
     )
@@ -17,10 +17,10 @@ const Box = styled.div`
     font-wieight: 400;
     font-size: 16px;
     background: #F5F6EE;
-    padding: 10px;
+    padding: 10px 20px;
     border: 1px solid white;
     border-radius: 5px;
-    min-width: 197px;
+    
     border: 1px solid #FD6600;
     &:hover {
         background: #ffceae;
