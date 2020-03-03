@@ -1,13 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import ListHeader from './ListHeader';
+import ListRow from './ListRow';
 
 export default function ListContainer(props) {
 
-    console.log(props);
+    
     return (
         <ListBox>
             <ListHeader />
+            {props.data.map((data) => (
+                <ListRow data={data} />
+            ))}
         </ListBox>
 
     )
@@ -26,4 +30,5 @@ const ListBox = styled.div`
     top: 250px;
     align-items: center;
     border-radius: 5px;
+    border: 1px solid #FD6600;
 `

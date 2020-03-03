@@ -29,4 +29,6 @@ const dummyData = [
       name: "Petty Hartman",
       score: 461
     }
-  ]
+  ];
+
+  export default dummyData;

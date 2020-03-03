@@ -5,10 +5,10 @@ import styled from "styled-components";
 import dummyData from './dummydata';
 
 
-function AppContainer(props) {
+const AppContainer = () => {
    
     const [ data ] = useState(dummyData);
-    console.log(data)
+    console.log("dummy data", data)
    
   
       return (

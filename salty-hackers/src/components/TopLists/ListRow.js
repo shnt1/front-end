@@ -1,21 +1,21 @@
+  
 import React from 'react';
 import styled from 'styled-components';
 
+//Export default component
+export default function ListRow(props) {
 
-export default function ListHeader(props) {
-
+    
     return (
-        <ListHeaderBox>
-            <RankCol>Rank</RankCol>
-            <NameCol>Name</NameCol>
-            <ScoreCol>Score</ScoreCol>
-
-        </ListHeaderBox>
-
+        <RowBox>
+            <RankCol>{props.data.index}</RankCol>
+            <NameCol>{props.data.name}</NameCol>
+            <ScoreCol>{props.data.score}</ScoreCol>
+        </RowBox>
     )
 }
 
-const ListHeaderBox = styled.div`
+const RowBox = styled.div`
     width: 90%;
     min-height: 40px;
     height: auto;
@@ -35,7 +35,7 @@ const RankCol = styled.div`
     background: white;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #FD6600;
+    border: 1px solid white;
 `
 
 const NameCol = styled.div`
@@ -43,7 +43,7 @@ const NameCol = styled.div`
     background: white;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #FD6600;
+    border: 1px solid white;
 `
 
 const ScoreCol = styled.div`
@@ -51,6 +51,5 @@ const ScoreCol = styled.div`
     background: white;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #FD6600;
+    border: 1px solid white;
 `
-

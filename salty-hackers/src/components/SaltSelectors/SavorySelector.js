@@ -21,9 +21,10 @@ const Box = styled.div`
     border: 1px solid white;
     border-radius: 5px;
     min-width: 197px;
+    border: 1px solid #FD6600;
     &:hover {
         background: #ffceae;
-        border: 1px solid #FD6600;
+        
         cursor: pointer;
     }
 `
