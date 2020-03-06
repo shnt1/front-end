@@ -27,9 +27,9 @@ export default SelectorRow;
 
 const SelectRow = styled.div`
     display: flex;
-    margin-bottom: 40px;
+    margin: auto 30px 40px;
     flex-flow: row nowrap;
-    justify-content: space-around;
+    justify-content: center;
     
     & a {
         text-decoration: none;
