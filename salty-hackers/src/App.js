@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import NavContainer from "./components/NavBar/NavContainer"
 import SignUp from "./components/Registration/SignUp"
 import SignIn from "./components/Registration/SignIn"
-import { Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import AppContainer from './components/AppContainer';
 import PrivateRoute from './components/PrivateRoute';
 
