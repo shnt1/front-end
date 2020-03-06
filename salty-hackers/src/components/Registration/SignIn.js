@@ -94,6 +94,7 @@ const MainBox = styled.div`
   background: #f5f6ee;
   border: 1px solid #fd6600;
   border-radius: 5px;
+  background-image: linear-gradient(120deg, #F5F6EE, #e2e4d8);
 `;
 
 const InputBox = styled.div`
@@ -108,6 +109,9 @@ const InputBox = styled.div`
     font-size: 24px;
     font-weight: 200;
     width: 100%;
+    
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.09),
+          0 2px 2px rgba(0, 0, 0, 0.03);
     :focus {
         outline: none;
         border-color: #fd6600;
@@ -138,8 +142,11 @@ const SubmitButton = styled.button`
     font-size: 20px;
     text-align: center;
     border-radius: 10px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.09),
+          0 2px 2px rgba(0, 0, 0, 0.03);
     border: 1px solid #fff;
     font-weight: 200;
+    margin-bottom: 10px;
     transition: 0.5s;
     color: ##3a3a3a;
     &:hover {
