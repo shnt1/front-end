@@ -2,13 +2,13 @@ import React, { Component, useState } from 'react'
 import SelectorRow from './SaltSelectors/SelectorRow';
 import ListContainer from './TopLists/ListContainer';
 import styled from "styled-components";
-import dummyData from './dummydata';
+import dummyData2 from './dummydata2';
 
 
-const AppContainer = () => {
+const SweetContainer = () => {
    
-    const [ data ] = useState(dummyData);
-    console.log("dummy data", data)
+    const [ data ] = useState(dummyData2);
+    console.log("sweet data", data)
 {/*
 axios
 .get("https://saltyhacker.herokuapp.com/api/trolls")
@@ -21,9 +21,9 @@ axios
 
 
 */}
-   if (!data) {
-       return (<h2>Loading data, please wait a moment...</h2>)
-   }
+if (!data) {
+    return (<h2>Loading data, please wait a moment...</h2>)
+}
   
       return (
         <Container>
@@ -34,7 +34,7 @@ axios
     
   }
   
-  export default AppContainer
+  export default SweetContainer
 
 
   const Container = styled.div`
