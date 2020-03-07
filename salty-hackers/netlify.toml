@@ -1,4 +1,0 @@
-[build]
-base = "salty-hackers/"
-publish = "salty-hackers/build/"
-command = "npm run build"
