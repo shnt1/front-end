@@ -4,7 +4,7 @@ import styled from "styled-components";
 const SaltySelector = () => {
   return (
     <Box>
-      <p>Saltiest Hackers</p>
+      <p>Saltiest 100 Hackers</p>
     </Box>
   );
 };

@@ -1,16 +1,19 @@
 
+.activeSweet div {
+    background-image: linear-gradient(0deg, #ffc0cb, #f8d5db);
+    color: #831427;
+}
 
 
 
 
-
-.active div {
+.activeSalt div {
     
     background-image: linear-gradient(0deg, #fcc5a1, #f8dac5);
     color: #753b15;
 }
 
 .colored {
-    color: #f8dac5;
+    color: #ff3153;
     
 }

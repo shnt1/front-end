@@ -4,7 +4,7 @@ import styled from "styled-components";
 const SweetSelector = () => {
   return (
     <Box>
-      <p>Sweetest Hackers</p>
+      <p>Sweetest 100 Hackers</p>
     </Box>
   );
 };
@@ -22,7 +22,7 @@ const Box = styled.div`
   overflow: auto;
   margin-left: 30px;
   &:hover {
-    background-image: linear-gradient(0deg, #fcc5a1, #f8dac5);
+    background-image: linear-gradient(0deg, #ffc0cb, #f8d5db);
     cursor: pointer;
   }
 `;

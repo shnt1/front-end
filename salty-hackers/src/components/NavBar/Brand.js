@@ -7,7 +7,7 @@ const Brand = () => {
   return (
     <Box>
     <Image src={logo} alt="Salt Logo" />
-    <Name>Salty Hackers</Name>
+    <Name><a href="https://www.saltyhackersnews.com/">Salty Hackers</a></Name>
 
     </Box>
   )
@@ -21,7 +21,12 @@ const Image = styled.img`
 `;
 
 const Name = styled.p`
-  font-size: 20px;
+  font-size: 26px;
+  font-family: 'Damion', cursive;
+  & a {
+    text-decoration: none;
+    color: black;
+  }
   
 `
 const Box = styled.div`

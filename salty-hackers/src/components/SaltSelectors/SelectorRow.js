@@ -10,11 +10,11 @@ const SelectorRow = () => {
     return (
         <SelectRow>
             <NavLink exact to="/app"
-            activeClassName="active"
+            activeClassName="activeSalt"
             > <SaltySelector /></NavLink>
             
             <NavLink exact to="/sweet"
-            activeClassName="active"
+            activeClassName="activeSweet"
             ><SweetSelector /> </NavLink>
             
         </SelectRow>

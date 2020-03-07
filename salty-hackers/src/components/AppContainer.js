@@ -20,7 +20,9 @@ const AppContainer = () => {
       .catch(err => (console.log(err)))
     }, [])
    
-  
+    if (!data) {
+      return (<h2>Loading data, please wait a moment...</h2>)
+  }
       return (
         <Container>
           <SelectorRow />
