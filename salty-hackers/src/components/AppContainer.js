@@ -18,7 +18,7 @@ const AppContainer = () => {
         setData(...data, res.data);
       })
       .catch(err => (console.log(err)))
-    }, [])
+    }, [...data])
    
     if (!data) {
       return (<h2>Loading data, please wait a moment...</h2>)
