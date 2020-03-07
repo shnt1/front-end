@@ -32,6 +32,28 @@ function SignUp({ touched, errors }) {
               )}
            </label>
           </InputBox>
+          {/* <InputBox>
+            <label>
+              <Field
+                type="password"
+                name="confirm"
+                placeholder="confirm password"
+              />
+              {touched.confirm && errors.confirm && (
+                <p className="errors">{errors.confirm}</p>
+              )}
+            </label>
+          </InputBox>
+          <CheckContainer>
+            <label>
+              
+              <Field type="checkbox" name="terms" />
+              {touched.checkbox && errors.checkbox && (
+                <p className="errors">{errors.checkbox}</p>
+              )}
+              By clicking here, you accept our terms of service.
+            </label>
+          </CheckContainer> */}
           <button type="submit">Sign Up</button>
         </Form>
       </MainBox>
@@ -54,6 +76,10 @@ export default withFormik({
     password: Yup.string()
       .min(3)
       .required()
+    // confirm: Yup
+    //   .string()
+    //   .oneOf([Yup.ref("password"), null], "Passwords must match"),
+    //   checkbox: Yup.bool().oneOf([true], "You must accept the terms of service")
   }),
 
   handleSubmit(values, formikBag) {

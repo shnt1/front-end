@@ -5,11 +5,12 @@ import ListRow from './ListRow';
 
 export default function ListContainer(props) {
 
-    
+    const top100 = props.data.slice(0, 100);
+    console.log('top100', top100)
     return (
         <ListBox>
             <ListHeader />
-            {props.data.map((data) => (
+            {top100.map((data) => (
                 <ListRow data={data} />
             ))}
         </ListBox>
