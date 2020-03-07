@@ -32,7 +32,7 @@ function SignIn({ touched, errors }) {
               )}
            </label>
           </InputBox>
-          <button type="submit">Sign Up</button>
+          <SubmitButton type="submit">Sign Up</SubmitButton>
         </Form>
       </MainBox>
     </Container>
