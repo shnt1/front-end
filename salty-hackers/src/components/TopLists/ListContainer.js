@@ -22,7 +22,7 @@ export default function ListContainer(props) {
 const ListBox = styled.div`
     
     width: 100%;
-    margin: 10px auto;
+    margin: 10px auto 90px;
     min-height: 50vh;
     background-image: linear-gradient(120deg, #F5F6EE, #e2e4d8);
     display: flex;
