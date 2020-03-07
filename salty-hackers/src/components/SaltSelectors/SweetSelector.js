@@ -4,7 +4,7 @@ import styled from "styled-components";
 const SweetSelector = () => {
   return (
     <Box>
-      <p>Top Sweet Hackers</p>
+      <p>Sweetest Hackers</p>
     </Box>
   );
 };
