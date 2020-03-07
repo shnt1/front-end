@@ -19,7 +19,7 @@ function App() {
       <Route exact path="/" component={SignIn}/>
       <Route exact path="/register" component={SignUp} />
       <PrivateRoute exact path="/app" component={AppContainer} />
-      <Route exact path="/sweet" component={SweetContainer} />
+      <PrivateRoute exact path="/sweet" component={SweetContainer} />
     </div>
   );
 }
