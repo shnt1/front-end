@@ -1,0 +1,16 @@
+
+
+
+
+
+
+.active div {
+    
+    background-image: linear-gradient(0deg, #fcc5a1, #f8dac5);
+    color: #753b15;
+}
+
+.colored {
+    color: #f8dac5;
+    
+}

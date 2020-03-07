@@ -54,7 +54,7 @@ const NavBar = styled(animated.nav)`
   width: 100%;
   top: 0;
   left: 0;
-  background: #F5F6EE;
+  background-image: linear-gradient(-100deg, #F5F6EE, #e2e4d8);
   z-index: 100;
   font-size: 1.4rem;
   font-weight: 200;
