@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from "styled-components";
-// import AstringentSelector from './AstringentSelector';
-// import SavorySelector from './SavorySelector';
 import SaltySelector from './SaltySelector';
 import SweetSelector from './SweetSelector';
 import { NavLink } from "react-router-dom";
