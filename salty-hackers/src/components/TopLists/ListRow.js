@@ -8,9 +8,9 @@ export default function ListRow(props) {
     
     return (
         <RowBox>
-            <RankCol>{props.data.index}</RankCol>
+            <RankCol>{props.data.salty_rank}</RankCol>
             <NameCol>{props.data.name}</NameCol>
-            <ScoreCol>{props.data.score}</ScoreCol>
+            <CommentCol>{props.data.salty_comments}</CommentCol>
         </RowBox>
     )
 }
@@ -46,7 +46,7 @@ const NameCol = styled.div`
     border: 1px solid white;
 `
 
-const ScoreCol = styled.div`
+const CommentCol = styled.div`
     width: 30%;
     background: white;
     padding: 10px;
