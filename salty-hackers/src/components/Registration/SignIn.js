@@ -2,29 +2,22 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { withFormik, Form, Field } from "formik";
-import * as yup from "yup";
+import * as Yup from "yup";
 import { Link } from "react-router-dom";
+import axiosWithAuth from "../utils/axiosWithAuth";
 
-
-const SignIn = ({ touched, errors, status }) => {
-  const [user, setUser] = useState([]);
-
-  console.log("user", user);
-  useEffect(() => {
-    status && setUser(users => [...users, status]);
-  }, [status]);
-
+function SignIn({ touched, errors }) {
   return (
     <Container>
       <MainBox>
         <Onboard>
-            <div><p><Link to={'/'}>Sign-In</Link></p></div>
-            <div><p><Link to={'/register'}>Register</Link></p></div>
+          <div><p><Link to={'/'}>Sign-In</Link></p></div>
+          <div><p><Link to={'/register'}>Register</Link></p></div>
         </Onboard>
         <Form>
           <InputBox>
             <label>
-              <Field type="text" name="name" placeholder="name" />
+              <Field type='text' name='username' placeholder='name'/>
               {touched.name && errors.name && (
                 <p className="errors">{errors.name}</p>
               )}
@@ -34,46 +27,124 @@ const SignIn = ({ touched, errors, status }) => {
           <InputBox>
             <label>
               <Field type="password" name="password" placeholder="password" />
-              {touched.password && errors.password && (
-                <p className="errors">{errors.password}</p>
+                {touched.password && errors.password && (
+                  <p className="errors">{errors.password}</p>
               )}
-            </label>
+           </label>
           </InputBox>
-
-          
-
-          <SubmitButton>Sign In</SubmitButton>
+          <button type="submit">Sign Up</button>
         </Form>
       </MainBox>
     </Container>
-  );
-};
+  )
+}
 
 export default withFormik({
-  mapPropsToValues: props => ({
-    id: Date.now(),
-    name: "",
-    password: "",
-    terms: false
+  mapPropsToValues() {
+    return {
+      username: '',
+      password: '',
+    };
+  },
+
+  validationSchema: Yup.object().shape({
+    username: Yup.string()
+      .min(3)
+      .required(),
+    password: Yup.string()
+      .min(3)
+      .required()
   }),
-  validationSchema: yup.object().shape({
-    name: yup.string().required("Your name is required!"),
-    password: yup.string().required("Password is required!"),  
-    checkbox: yup.bool().oneOf([true], "You must accept the terms of service")
-  }),
-  handleSubmit: (values, { resetForm, setStatus }) => {
-    // console.log("Submitting!", formikBag)
-    // POST body === {}
-    axios
-      .post("https://reqres.in/api/users/", values)
+
+  handleSubmit(values, formikBag) {
+    const url = 'https://saltyhacker.herokuapp.com/api/auth/login'
+
+    console.log(values)
+
+    axiosWithAuth()
+      .post(url, values)
       .then(response => {
-        console.log(response);
-        setStatus(response.data);
-        resetForm();
+        console.log(response.data.payload);
+        sessionStorage.setItem('token', response.data.payload);
+        formikBag.props.history.push('/app')
       })
-      .catch(err => console.log(err.response));
+      .catch(e => {
+        console.log(e)
+      });
   }
-})(SignIn);
+
+})(SignIn)
+
+// const SignIn = ({ touched, errors, status }) => {
+//   const [user, setUser] = useState([]);
+
+//   console.log("user", user);
+//   useEffect(() => {
+//     status && setUser(users => [...users, status]);
+//   }, [status]);
+
+//   return (
+//     <Container>
+//       <MainBox>
+//         <Onboard>
+//             <div><p><Link to={'/'}>Sign-In</Link></p></div>
+//             <div><p><Link to={'/register'}>Register</Link></p></div>
+//         </Onboard>
+//         <Form>
+//           <InputBox>
+//             <label>
+//               <Field type="text" name="name" placeholder="name" />
+//               {touched.name && errors.name && (
+//                 <p className="errors">{errors.name}</p>
+//               )}
+//             </label>
+//           </InputBox>
+
+//           <InputBox>
+//             <label>
+//               <Field type="password" name="password" placeholder="password" />
+//               {touched.password && errors.password && (
+//                 <p className="errors">{errors.password}</p>
+//               )}
+//             </label>
+//           </InputBox>
+
+          
+
+//           <button type="submit">Sign In</button>
+//         </Form>
+//       </MainBox>
+//     </Container>
+//   );
+// };
+
+// export default withFormik({
+//   mapPropsToValues: props => ({
+//     id: Date.now(),
+//     name: "",
+//     password: "",
+//     terms: false
+//   }),
+//   validationSchema: yup.object().shape({
+//     name: yup.string().required("Your name is required!"),
+//     password: yup.string().required("Password is required!"),  
+//     checkbox: yup.bool().oneOf([true], "You must accept the terms of service")
+//   }),
+//   handleSubmit: (values, formikBag) => {
+//     // console.log("Submitting!", formikBag)
+//     // POST body === {}
+//     axiosWithAuth()
+//       .post("https://saltyhacker.herokuapp.com/api/auth/register", values)
+//       .then(response => {
+//         //server team needs to implement jwt endpoint
+//         console.log(response, 'this is the response');
+//         sessionStorage.setItem('token', response.data);
+
+//         formikBag.props.history.push('/app')
+//       })
+//       .catch(err => console.log(err.response));
+//   }
+// })(SignIn);
 
 const Container = styled.div`
   margin: 100px auto;

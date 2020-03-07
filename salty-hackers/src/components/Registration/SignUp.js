@@ -2,28 +2,22 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { withFormik, Form, Field } from "formik";
-import * as yup from "yup";
+import * as Yup from "yup";
 import { Link } from "react-router-dom";
 
-const SignUp = ({ touched, errors, status }) => {
-  const [user, setUser] = useState([]);
 
-  console.log("user", user);
-  useEffect(() => {
-    status && setUser(users => [...users, status]);
-  }, [status]);
-
+function SignUp({ touched, errors }) {
   return (
     <Container>
       <MainBox>
         <Onboard>
-            <div><p><Link to={'/'}>Sign-In</Link></p></div>
-            <div><p><Link to={'/register'}>Register</Link></p></div>
+          <div><p><Link to={'/'}>Sign-In</Link></p></div>
+          <div><p><Link to={'/register'}>Register</Link></p></div>
         </Onboard>
         <Form>
           <InputBox>
             <label>
-              <Field type="text" name="name" placeholder="name" />
+              <Field type='text' name='username' placeholder='name'/>
               {touched.name && errors.name && (
                 <p className="errors">{errors.name}</p>
               )}
@@ -33,72 +27,159 @@ const SignUp = ({ touched, errors, status }) => {
           <InputBox>
             <label>
               <Field type="password" name="password" placeholder="password" />
-              {touched.password && errors.password && (
-                <p className="errors">{errors.password}</p>
+                {touched.password && errors.password && (
+                  <p className="errors">{errors.password}</p>
               )}
-            </label>
+           </label>
           </InputBox>
-
-          <InputBox>
-            <label>
-              <Field
-                type="password"
-                name="confirm"
-                placeholder="confirm password"
-              />
-              {touched.confirm && errors.confirm && (
-                <p className="errors">{errors.confirm}</p>
-              )}
-            </label>
-          </InputBox>
-
-          <CheckContainer>
-            <label>
-              
-              <Field type="checkbox" name="terms" />
-              {touched.checkbox && errors.checkbox && (
-                <p className="errors">{errors.checkbox}</p>
-              )}
-              By clicking here, you accept our terms of service.
-            </label>
-          </CheckContainer>
-
-          <SubmitButton>Register</SubmitButton>
+          <button type="submit">Sign Up</button>
         </Form>
       </MainBox>
     </Container>
-  );
-};
+  )
+}
 
 export default withFormik({
-  mapPropsToValues: props => ({
-    id: Date.now(),
-    name: "",
-    password: "",
-    confirm: "",
-    terms: false
+  mapPropsToValues() {
+    return {
+      username: '',
+      password: '',
+    };
+  },
+
+  validationSchema: Yup.object().shape({
+    username: Yup.string()
+      .min(3)
+      .required(),
+    password: Yup.string()
+      .min(3)
+      .required()
   }),
-  validationSchema: yup.object().shape({
-    name: yup.string().required("Your name is required!"),
-    password: yup.string().required("Password is required!"),
-    confirm: yup
-      .string()
-      .oneOf([yup.ref("password"), null], "Passwords must match"),
-    checkbox: yup.bool().oneOf([true], "You must accept the terms of service")
-  }),
-  handleSubmit: (values, { resetForm, setStatus }) => {
-    // console.log("Submitting!", formikBag)
-    // POST body === {}
+
+  handleSubmit(values, formikBag) {
+    const url = 'https://saltyhacker.herokuapp.com/api/auth/register'
+
+    console.log(values)
+
     axios
-      .post("https://reqres.in/api/users/", values)
+      .post(url, values)
       .then(response => {
-        console.log(response);
-        setStatus(response.data);
-        resetForm();
+        console.log(response)
+        formikBag.props.history.push('/app')
       })
-      .catch(err => console.log(err.response));
+      .catch(e => {
+        console.log(e)
+      });
   }
-})(SignUp);
+
+})(SignUp)
+
+
+// const SignUp = ({ touched, errors }) => {
+//   const [user, setUser] = useState([]);
+//   const [status, setStatus] = useState([]);
+//   useEffect(() => {axios
+//     .post("https://saltyhacker.herokuapp.com/api/auth/register")
+//     .then(response => {
+//       console.log(response);
+//       setStatus(response.data);
+//     })
+//     .catch(err => console.log(err.response));
+// })
+
+//   console.log("user", user);
+//   useEffect(() => {
+//     status && setUser(users => [...users, status]);
+//   }, [status]);
+
+//   return (
+//     <Container>
+//       <MainBox>
+//         <Onboard>
+//             <div><p><Link to={'/'}>Sign-In</Link></p></div>
+//             <div><p><Link to={'/register'}>Register</Link></p></div>
+//         </Onboard>
+//         <Form>
+//           <InputBox>
+//             <label>
+//               <Field type="text" name="username" placeholder="name" />
+//               {touched.name && errors.name && (
+//                 <p className="errors">{errors.name}</p>
+//               )}
+//             </label>
+//           </InputBox>
+
+//           <InputBox>
+//             <label>
+//               <Field type="password" name="password" placeholder="password" />
+//               {touched.password && errors.password && (
+//                 <p className="errors">{errors.password}</p>
+//               )}
+//             </label>
+//           </InputBox>
+
+//           {/* <InputBox>
+//             <label>
+//               <Field
+//                 type="password"
+//                 name="confirm"
+//                 placeholder="confirm password"
+//               />
+//               {touched.confirm && errors.confirm && (
+//                 <p className="errors">{errors.confirm}</p>
+//               )}
+//             </label>
+//           </InputBox> */}
+
+//           <CheckContainer>
+//             <label>
+              
+//               <Field type="checkbox" name="terms" />
+//               {touched.checkbox && errors.checkbox && (
+//                 <p className="errors">{errors.checkbox}</p>
+//               )}
+//               By clicking here, you accept our terms of service.
+//             </label>
+//           </CheckContainer>
+
+//           <SubmitButton type='submit'>Register</SubmitButton>
+//         </Form>
+//       </MainBox>
+//     </Container>
+//   );
+//               }
+
+// export default withFormik({
+//   mapPropsToValues: props => ({
+//     id: Date.now(),
+//     username: "",
+//     password: "",
+//     terms: false
+//   }),
+//   validationSchema: yup.object().shape({
+//     username: yup.string().required("Your name is required!"),
+//     password: yup.string().required("Password is required!"),
+//     // confirm: yup
+//     //   .string()
+//     //   .oneOf([yup.ref("password"), null], "Passwords must match"),
+//     checkbox: yup.bool().oneOf([true], "You must accept the terms of service")
+//   }),
+//   // handleSubmit: (values, { resetForm, setStatus }) => {
+//   //   // console.log("Submitting!", formikBag)
+//   //   // POST body === {}
+//   //   console.log('From handleSubmit values = ', values);
+
+//   //   useEffect(() => {axios
+//   //     .post("https://saltyhacker.herokuapp.com/api/auth/register", values)
+//   //     .then(response => {
+//   //       console.log(response);
+//   //       setStatus(response.data);
+//   //       resetForm();
+//   //     })
+//   //     .catch(err => console.log(err.response));
+//   // })}
+    
+// })(SignUp);
 
 const Container = styled.div`
   margin: 100px auto;

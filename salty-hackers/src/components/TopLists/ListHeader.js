@@ -8,7 +8,7 @@ export default function ListHeader(props) {
         <ListHeaderBox>
             <RankCol>Rank</RankCol>
             <NameCol>Name</NameCol>
-            <ScoreCol>Score</ScoreCol>
+            <ScoreCol>Comments</ScoreCol>
 
         </ListHeaderBox>
 

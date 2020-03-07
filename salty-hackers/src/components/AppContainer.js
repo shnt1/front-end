@@ -3,27 +3,23 @@ import SelectorRow from './SaltSelectors/SelectorRow';
 import ListContainer from './TopLists/ListContainer';
 import styled from "styled-components";
 import dummyData from './dummydata';
+import { useEffect } from 'react';
+import axiosWithAuth from './utils/axiosWithAuth';
 
 
 const AppContainer = () => {
    
-    const [ data ] = useState(dummyData);
+    const [data, setData] = useState([]);
     console.log("dummy data", data)
-{/*
-axios
-.get("https://saltyhacker.herokuapp.com/api/trolls")
-.then(response => {
-    console.log(response)
-})
-.catch(error => {
-    console.log(error)
-})
-
-
-*/}
-   if (!data) {
-       return (<h2>Loading data, please wait a moment...</h2>)
-   }
+    useEffect(() => {
+      axiosWithAuth().get("https://saltyhacker.herokuapp.com/api/trolls")
+      .then(res => {
+        console.log(res)
+        setData(...data, res.data);
+      })
+      .catch(err => (console.log(err)))
+    }, [])
+   
   
       return (
         <Container>
