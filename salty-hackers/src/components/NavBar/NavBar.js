@@ -71,14 +71,14 @@ const FlexContainer = styled.div`
   height: 5rem;
 `;
 
-const BrandContainer = styled.div`
-  max-width: 120rem;
-  display: flex;
-  margin: auto;
-  padding: 0 2rem;;
-  justify-content: flex-start;
-  height: 5rem;
-`;
+// const BrandContainer = styled.div`
+//   max-width: 120rem;
+//   display: flex;
+//   margin: auto;
+//   padding: 0 2rem;;
+//   justify-content: flex-start;
+//   height: 5rem;
+// `;
 
 const NavLinks = styled(animated.ul)`
   justify-self: end;

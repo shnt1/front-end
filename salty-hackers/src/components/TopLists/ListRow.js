@@ -1,8 +1,7 @@
-  
 import React from 'react';
 import styled from 'styled-components';
 
-//Export default component
+
 export default function ListRow(props) {
 
     function percentage(num1, num2) {

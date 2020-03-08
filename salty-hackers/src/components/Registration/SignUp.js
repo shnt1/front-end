@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { withFormik, Form, Field } from "formik";
@@ -253,21 +253,21 @@ const InputBox = styled.div`
   }
 `;
 
-const CheckContainer = styled.div`
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  font-size: 18px;
+// const CheckContainer = styled.div`
+//   display: flex;
+//   flex-flow: row nowrap;
+//   align-items: center;
+//   font-size: 18px;
 
-  & input {
-    position: relative;
-    top: 1px;
-    height: 18px;
-    width: 18px;
-    align-self: flex-end;
-    margin: 30px 15px 30px 0;
-  }
-`;
+//   & input {
+//     position: relative;
+//     top: 1px;
+//     height: 18px;
+//     width: 18px;
+//     align-self: flex-end;
+//     margin: 30px 15px 30px 0;
+//   }
+// `;
 
 const SubmitButton = styled.button`
   margin-top: 15px;
