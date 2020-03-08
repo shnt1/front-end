@@ -49,8 +49,6 @@ const AboutBox = styled.div`
   display: flex;
   flex-flow: column nowrap;
   padding: 2% 5%;
-  // position: relative;
-  // top: 260px;
   align-items: center;
   justify-content: space-between;
   border-radius: 5px;
