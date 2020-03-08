@@ -12,7 +12,7 @@ export default function ListRow(props) {
     return (
         <RowBox>
             <RankCol>{props.data.salty_rank}</RankCol>
-            <NameCol><a href={`https://news.ycombinator.com/user?id=${props.data.name}`} >{props.data.name}</a></NameCol>
+            <NameCol><a target="_blank" rel="noopener noreferrer" href={`https://news.ycombinator.com/user?id=${props.data.name}`} >{props.data.name}</a></NameCol>
             <CommentCol>{props.data.salty_comments + 1}</CommentCol>
             <TotalCol>{props.data.comments_total}</TotalCol>
             <RatioCol>{percentage(props.data.salty_comments, props.data.comments_total)}%</RatioCol>

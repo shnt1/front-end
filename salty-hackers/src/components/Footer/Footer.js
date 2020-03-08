@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <SDFooter>
       <div>
-        Created by  &copy; 2020
+        Created by Jay Maas, Serina Grill, Keith Giddings, Vince Emma, Jonathan Troop, Denise Chaloupka, Brian Leonard, J Wylie, and Benjamin Whitman &copy; 2020
       </div>
     </SDFooter>
   );

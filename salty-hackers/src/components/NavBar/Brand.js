@@ -7,7 +7,7 @@ const Brand = () => {
   return (
     <Box>
     <Image src={logo} alt="Salt Logo" />
-    <Name><a href="https://www.saltyhackersnews.com/">Salty Hackers</a></Name>
+    <Name><a target="_blank" rel="noopener noreferrer" href="https://www.saltyhackersnews.com/">Salty Hackers</a></Name>
 
     </Box>
   )
