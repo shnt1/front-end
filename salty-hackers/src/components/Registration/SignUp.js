@@ -24,18 +24,18 @@ function SignUp({ touched, errors }) {
         <Form>
           <InputBox>
             <label>
-              <Field type="text" name="username" placeholder="name" />
+              <Field type='text' name='username' placeholder='name' />
               {touched.name && errors.name && (
-                <p className="errors">{errors.name}</p>
+                <p className='errors'>{errors.name}</p>
               )}
             </label>
           </InputBox>
 
           <InputBox>
             <label>
-              <Field type="password" name="password" placeholder="password" />
+              <Field type='password' name='password' placeholder='password' />
               {touched.password && errors.password && (
-                <p className="errors">{errors.password}</p>
+                <p className='errors'>{errors.password}</p>
               )}
             </label>
           </InputBox>
@@ -61,7 +61,7 @@ function SignUp({ touched, errors }) {
               By clicking here, you accept our terms of service.
             </label>
           </CheckContainer> */}
-          <SubmitButton type="submit">Sign Up</SubmitButton>
+          <SubmitButton type='submit'>Sign Up</SubmitButton>
         </Form>
       </MainBox>
     </Container>
@@ -98,7 +98,12 @@ export default withFormik({
       .post(url, values)
       .then(response => {
         console.log(response);
-        formikBag.props.history.push("/app");
+        axios
+          .post("https://saltyhacker.herokuapp.com/api/auth/login", values)
+          .then(res => {
+            sessionStorage.setItem("token", res.data.payload);
+            formikBag.props.history.push("/app");
+          });
       })
       .catch(e => {
         console.log(e);
