@@ -26,11 +26,11 @@ const Navbar = (props) => {
           <Brand />
           
           <NavLinks style={linkAnimation}>
-            
+          <Link to={'/about'}>About</Link>
             <Link to={'/'}>Sign-In</Link>
             <Link to={'/register'}>Register</Link>
             <Link to={'/app'}>App</Link>
-            <Link to={'/about'}>About</Link>
+            
           </NavLinks>
           <BurgerWrapper>
             <BurgerMenu

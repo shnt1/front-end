@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SweetListHeader from './SweetListHeader';
-import ListRow from './ListRow';
+import SweetListRow from './SweetListRow';
 
 export default function SweetListContainer(props) {
 
@@ -11,7 +11,7 @@ export default function SweetListContainer(props) {
         <ListBox>
             <SweetListHeader />
             {top100.map((data) => (
-                <ListRow data={data} />
+                <SweetListRow data={data} />
             ))}
         </ListBox>
 
@@ -33,4 +33,5 @@ const ListBox = styled.div`
     align-items: center;
     border-radius: 5px;
     border: 1px solid #ff3153;
+    
 `

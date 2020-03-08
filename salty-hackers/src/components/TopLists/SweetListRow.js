@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 //Export default component
-export default function ListRow(props) {
+export default function SweetListRow(props) {
 
     function percentage(num1, num2) {
         return (((num1 + 1)/num2) * 100).toFixed(2);
@@ -55,7 +55,7 @@ const NameCol = styled.div`
     border: 1px solid white;
     & a {
         text-decoration: none;
-        color: #FD6600;
+        color: #ff3153;
     }
 `
 
