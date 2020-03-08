@@ -1,8 +1,7 @@
-  
 import React from 'react';
 import styled from 'styled-components';
 
-//Export default component
+
 export default function ListRow(props) {
 
     function percentage(num1, num2) {
@@ -12,7 +11,7 @@ export default function ListRow(props) {
     return (
         <RowBox>
             <RankCol>{props.data.salty_rank}</RankCol>
-            <NameCol>{props.data.name}</NameCol>
+            <NameCol><a target="_blank" rel="noopener noreferrer" href={`https://news.ycombinator.com/user?id=${props.data.name}`} >{props.data.name}</a></NameCol>
             <CommentCol>{props.data.salty_comments + 1}</CommentCol>
             <TotalCol>{props.data.comments_total}</TotalCol>
             <RatioCol>{percentage(props.data.salty_comments, props.data.comments_total)}%</RatioCol>
@@ -53,6 +52,10 @@ const NameCol = styled.div`
     padding: 10px;
     border-radius: 5px;
     border: 1px solid white;
+    & a {
+        text-decoration: none;
+        color: #FD6600;
+    }
 `
 
 const CommentCol = styled.div`

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-import axios from "axios";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
@@ -11,13 +10,21 @@ function SignIn({ touched, errors }) {
     <Container>
       <MainBox>
         <Onboard>
-          <div><p><Link to={'/'}>Sign-In</Link></p></div>
-          <div><p><Link to={'/register'}>Register</Link></p></div>
+          <div>
+            <p>
+              <Link to={"/"}>Sign-In</Link>
+            </p>
+          </div>
+          <div>
+            <p>
+              <Link to={"/register"}>Register</Link>
+            </p>
+          </div>
         </Onboard>
         <Form>
           <InputBox>
             <label>
-              <Field type='text' name='username' placeholder='name'/>
+              <Field type="text" name="username" placeholder="name" />
               {touched.name && errors.name && (
                 <p className="errors">{errors.name}</p>
               )}
@@ -27,23 +34,23 @@ function SignIn({ touched, errors }) {
           <InputBox>
             <label>
               <Field type="password" name="password" placeholder="password" />
-                {touched.password && errors.password && (
-                  <p className="errors">{errors.password}</p>
+              {touched.password && errors.password && (
+                <p className="errors">{errors.password}</p>
               )}
-           </label>
+            </label>
           </InputBox>
           <SubmitButton type="submit">Sign In</SubmitButton>
         </Form>
       </MainBox>
     </Container>
-  )
+  );
 }
 
 export default withFormik({
   mapPropsToValues() {
     return {
-      username: '',
-      password: '',
+      username: "",
+      password: ""
     };
   },
 
@@ -57,23 +64,22 @@ export default withFormik({
   }),
 
   handleSubmit(values, formikBag) {
-    const url = 'https://saltyhacker.herokuapp.com/api/auth/login'
+    const url = "https://saltyhacker.herokuapp.com/api/auth/login";
 
-    console.log(values)
+    console.log(values);
 
     axiosWithAuth()
       .post(url, values)
       .then(response => {
         console.log(response.data.payload);
-        sessionStorage.setItem('token', response.data.payload);
-        formikBag.props.history.push('/app')
+        sessionStorage.setItem("token", response.data.payload);
+        formikBag.props.history.push("/app");
       })
       .catch(e => {
-        console.log(e)
+        console.log(e);
       });
   }
-
-})(SignIn)
+})(SignIn);
 
 // const SignIn = ({ touched, errors, status }) => {
 //   const [user, setUser] = useState([]);
@@ -109,8 +115,6 @@ export default withFormik({
 //             </label>
 //           </InputBox>
 
-          
-
 //           <button type="submit">Sign In</button>
 //         </Form>
 //       </MainBox>
@@ -127,7 +131,7 @@ export default withFormik({
 //   }),
 //   validationSchema: yup.object().shape({
 //     name: yup.string().required("Your name is required!"),
-//     password: yup.string().required("Password is required!"),  
+//     password: yup.string().required("Password is required!"),
 //     checkbox: yup.bool().oneOf([true], "You must accept the terms of service")
 //   }),
 //   handleSubmit: (values, formikBag) => {
@@ -165,11 +169,10 @@ const MainBox = styled.div`
   background: #f5f6ee;
   border: 1px solid #fd6600;
   border-radius: 5px;
-  background-image: linear-gradient(120deg, #F5F6EE, #e2e4d8);
+  background-image: linear-gradient(120deg, #f5f6ee, #e2e4d8);
 `;
 
 const InputBox = styled.div`
-  
   padding: 15px 0;
   width: 430px;
   & input {
@@ -180,85 +183,78 @@ const InputBox = styled.div`
     font-size: 24px;
     font-weight: 200;
     width: 100%;
-    
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.09),
-          0 2px 2px rgba(0, 0, 0, 0.03);
+
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.09), 0 2px 2px rgba(0, 0, 0, 0.03);
     :focus {
-        outline: none;
-        border-color: #fd6600;
+      outline: none;
+      border-color: #fd6600;
     }
   }
 `;
 
-const CheckContainer = styled.div`
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  font-size: 18px;
-  
-  & input {
-    position: relative;
-    top: 1px;
-    height: 18px;
-    width: 18px;
-    align-self: flex-end;
-    margin: 30px 15px 30px 0;
-    
-  }
-`;
+// const CheckContainer = styled.div`
+//   display: flex;
+//   flex-flow: row nowrap;
+//   align-items: center;
+//   font-size: 18px;
+
+//   & input {
+//     position: relative;
+//     top: 1px;
+//     height: 18px;
+//     width: 18px;
+//     align-self: flex-end;
+//     margin: 30px 15px 30px 0;
+//   }
+// `;
 
 const SubmitButton = styled.button`
-    margin-top: 15px;
-    padding: 5px 10px;
-    font-size: 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.09),
-          0 2px 2px rgba(0, 0, 0, 0.03);
-    border: 1px solid #fff;
-    font-weight: 200;
-    margin-bottom: 10px;
-    transition: 0.5s;
-    color: ##3a3a3a;
-    &:hover {
-        border: 1px solid #fd6600;
-        background: #f5f6ee;
-        color: black;
-        
-    }
-    &:focus {
-        outline: none;
-    }
-
+  margin-top: 15px;
+  padding: 5px 10px;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.09), 0 2px 2px rgba(0, 0, 0, 0.03);
+  border: 1px solid #fff;
+  font-weight: 200;
+  margin-bottom: 10px;
+  transition: 0.5s;
+  color: ##3a3a3a;
+  &:hover {
+    border: 1px solid #fd6600;
+    background: #f5f6ee;
+    color: black;
+  }
+  &:focus {
+    outline: none;
+  }
 `;
 
 const Onboard = styled.div`
-    display: flex;
+  display: flex;
+  text-align: center;
+  flex-flow: row nowrap;
+  justify-content: center;
+  width: 100%;
+  margin: 20px 0;
+  & div {
+    width: 50%;
+    font-size: 22px;
+    font-weight: 200;
     text-align: center;
-    flex-flow: row nowrap;
-    justify-content: center;
-    width: 100%;
-    margin: 20px 0;
-    & div {
-        width: 50%;
-        font-size: 22px;
-        font-weight: 200;
-        text-align: center;
+  }
+  & div:first-child {
+    border-right: 1px solid black;
+    margin-left: 80px;
+  }
+  & div:last-child {
+    margin-right: 80px;
+  }
+  & a {
+    text-decoration: none;
+    color: black;
+    &:hover {
+      border-bottom: 1px solid #fd6600;
     }
-    & div:first-child {
-        border-right: 1px solid black;
-        margin-left: 80px;
-    }
-    & div:last-child {
-        margin-right: 80px;
-    }
-    & a {
-        text-decoration: none;
-        color: black;
-        &:hover {
-      
-            border-bottom: 1px solid #FD6600;
-          }
-    }
-
+  }
 `;
