@@ -254,7 +254,7 @@ const Onboard = styled.div`
     font-weight: 200;
     text-align: center;
     @media (max-width: 568px) {
-      width: 70%
+      width: 70%;
       font-size: 14px;
     }
   }
