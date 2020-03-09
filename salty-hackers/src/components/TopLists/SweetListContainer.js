@@ -4,13 +4,14 @@ import SweetListHeader from "./SweetListHeader";
 import SweetListRow from "./SweetListRow";
 
 export default function SweetListContainer(props) {
-  const top100 = props.data.slice(0, 100);
-  console.log("top100", top100);
+    const sweetObj = props.data;
+    const sweetArray = Object.entries(sweetObj).map((e) => ( { [e[0]]: e[1]} ));
+    console.log(sweetArray)
   return (
     <ListBox>
       <SweetListHeader />
-      {top100.map(data => (
-        <SweetListRow data={data} />
+      {sweetArray.map((data, key) => (
+        <SweetListRow data={data[key]} key={key} />
       ))}
     </ListBox>
   );

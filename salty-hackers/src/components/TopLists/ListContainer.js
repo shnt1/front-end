@@ -4,13 +4,15 @@ import ListHeader from "./ListHeader";
 import ListRow from "./ListRow";
 
 export default function ListContainer(props) {
-  const top100 = props.data.slice(0, 100);
-  console.log("top100", top100);
+  
+    const saltyObj = props.data;
+    const saltyArray = Object.entries(saltyObj).map((e) => ( { [e[0]]: e[1]} ));
+    console.log(saltyArray)
   return (
     <ListBox>
       <ListHeader />
-      {top100.map(data => (
-        <ListRow data={data} />
+      {saltyArray.map((data, key) => (
+        <ListRow data={data[key]} key={key} />
       ))}
     </ListBox>
   );

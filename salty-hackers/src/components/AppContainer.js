@@ -3,20 +3,22 @@ import SelectorRow from "./SaltSelectors/SelectorRow";
 import ListContainer from "./TopLists/ListContainer";
 import styled from "styled-components";
 import { useEffect } from "react";
-import axiosWithAuth from "./utils/axiosWithAuth";
+
+import axios from "axios";
 
 const AppContainer = () => {
   const [data, setData] = useState([]);
-  console.log("dummy data", data);
   useEffect(() => {
-    axiosWithAuth()
-      .get("https://saltyhacker.herokuapp.com/api/trolls")
+    axios
+      .get("https://salty-shnt1.herokuapp.com/showjson_salty")
       .then(res => {
         console.log(res);
         setData(...data, res.data);
       })
       .catch(err => console.log(err));
   }, []);
+
+  
 
   if (!data) {
     return <h2>Loading data, please wait a moment...</h2>;

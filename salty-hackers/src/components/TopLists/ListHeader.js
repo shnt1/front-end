@@ -6,15 +6,14 @@ export default function ListHeader(props) {
     <ListHeaderBox>
       <RankCol>Rank</RankCol>
       <NameCol>Name</NameCol>
-      <ScoreCol>Salty Comments</ScoreCol>
-      <TotalCol>Total Comments</TotalCol>
-      <RatioCol>% of Salty Comments</RatioCol>
+      <ScoreCol>Salt Score</ScoreCol>
+      <Comment>Saltiest Comment</Comment>
     </ListHeaderBox>
   );
 }
 
 const ListHeaderBox = styled.div`
-  width: 90%;
+  width: 95%;
   @media (max-width: 868px) {
     width: 100%;
   }
@@ -31,10 +30,11 @@ const ListHeaderBox = styled.div`
 `;
 
 const RankCol = styled.div`
-  width: 15%;
+  width: 10%;
   height: 60px;
   display: flex;
   align-items: center;
+  justify-content: center;
   background: white;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.05);
   padding: 10px;
@@ -57,10 +57,11 @@ const RankCol = styled.div`
 `;
 
 const NameCol = styled.div`
-  width: 30%;
+  width: 14%;
   height: 60px;
   display: flex;
   align-items: center;
+  justify-content: center;
   background: white;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.05);
   padding: 10px;
@@ -80,10 +81,12 @@ const NameCol = styled.div`
 `;
 
 const ScoreCol = styled.div`
-  width: 15%;
+  width: 10%;
   height: 60px;
   display: flex;
   align-items: center;
+  text-align: center;
+  justify-content: center;
   background: white;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.05);
   padding: 10px;
@@ -101,11 +104,12 @@ const ScoreCol = styled.div`
     width: auto;
   }
 `;
-const TotalCol = styled.div`
-  width: 15%;
+const Comment = styled.div`
+  width: 61%;
   height: 60px;
   display: flex;
   align-items: center;
+  justify-content: center;
   background: white;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.05);
   padding: 10px;
@@ -124,26 +128,4 @@ const TotalCol = styled.div`
   }
 `;
 
-const RatioCol = styled.div`
-  width: 16%;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  background: white;
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.05);
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #fd6600;
-  @media (max-width: 868px) {
-    font-size: 14px;
-  }
-  @media (max-width: 600px) {
-    font-size: 12px;
-    word-wrap:break-word;
-  }
-  @media (max-width: 500px) {
-    font-size: 11px;
-    word-wrap:break-word;
-    width: auto;
-  }
-`;
+

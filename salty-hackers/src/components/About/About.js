@@ -16,11 +16,11 @@ export default function About() {
         commenters.
         <br />
         <br />
-        Scores ranging from -1 to -0.5 indicate a high subjective and negative
+        Scores of -0.5 and lower indicate a high subjective and negative
         polarity of their comments, indicating they are "salty."
         <br />
         <br />
-        Scores ranging from 0.5 to 1 indicate a high subjective and positive
+        Scores of 0.5 and higher indicate a high subjective and positive
         polarity of their comments, indicating they are "sweet."
         <br />
         <br />

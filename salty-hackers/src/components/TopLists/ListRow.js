@@ -4,23 +4,21 @@ import styled from 'styled-components';
 
 export default function ListRow(props) {
 
-    function percentage(num1, num2) {
-        return (((num1 + 1)/num2) * 100).toFixed(2);
-    }
+  
     
     return (
         <RowBox>
-            <RankCol>{props.data.salty_rank}</RankCol>
-            <NameCol><a target="_blank" rel="noopener noreferrer" href={`https://news.ycombinator.com/user?id=${props.data.name}`} >{props.data.name}</a></NameCol>
-            <CommentCol>{props.data.salty_comments + 1}</CommentCol>
-            <TotalCol>{props.data.comments_total}</TotalCol>
-            <RatioCol>{percentage(props.data.salty_comments, props.data.comments_total)}%</RatioCol>
+            <RankCol>{props.data.rank}</RankCol>
+            <NameCol><a target="_blank" rel="noopener noreferrer" href={`https://news.ycombinator.com/user?id=${props.data.user}`} >{props.data.user}</a></NameCol>
+            <ScoreCol>{(Math.round(props.data.salt_score * 100) / 100).toFixed(3)}</ScoreCol>
+            <CommentCol>{props.data.saltiest_comment}</CommentCol>
         </RowBox>
+        
     )
 }
 
 const RowBox = styled.div`
-    width: 90%;
+    width: 95%;
     min-height: 40px;
     height: auto;
     padding: 5px;
@@ -40,7 +38,8 @@ const RowBox = styled.div`
 `
 
 const RankCol = styled.div`
-    width: 15%;
+    width: 10%;
+    text-align: center;
     @media (max-width: 500px) {
         width: auto;
       }
@@ -53,7 +52,8 @@ const RankCol = styled.div`
 `
 
 const NameCol = styled.div`
-    width: 30%;
+    width: 14%;
+    text-align: center;
     @media (max-width: 500px) {
         width: auto;
       }
@@ -69,8 +69,22 @@ const NameCol = styled.div`
     }
 `
 
+const ScoreCol = styled.div`
+    width: 10%;
+    text-align: center;
+    @media (max-width: 500px) {
+        width: auto;
+      }
+    background: white;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15),
+          0 2px 2px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+`
+
 const CommentCol = styled.div`
-    width: 15%;
+    width: 61%;
     @media (max-width: 500px) {
         width: auto;
       }
@@ -82,28 +96,3 @@ const CommentCol = styled.div`
     border: 1px solid white;
 `
 
-const TotalCol = styled.div`
-    width: 15%;
-    @media (max-width: 500px) {
-        width: auto;
-      }
-    background: white;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15),
-          0 2px 2px rgba(0, 0, 0, 0.05);
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid white;
-`
-
-const RatioCol = styled.div`
-    width: 16%;
-    @media (max-width: 500px) {
-        width: auto;
-      }
-    background: white;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15),
-          0 2px 2px rgba(0, 0, 0, 0.05);
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid white;
-`
