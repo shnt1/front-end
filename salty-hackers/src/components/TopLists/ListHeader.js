@@ -49,6 +49,11 @@ const RankCol = styled.div`
   @media (max-width: 600px) {
     font-size: 12px;
   }
+  @media (max-width: 400px) {
+    font-size: 11px;
+    word-wrap:break-word;
+    height: 50px;
+  }
 `;
 
 const NameCol = styled.div`
@@ -66,6 +71,11 @@ const NameCol = styled.div`
   }
   @media (max-width: 600px) {
     font-size: 12px;
+  }
+  @media (max-width: 400px) {
+    font-size: 11px;
+    word-wrap:break-word;
+    height: 50px;
   }
 `;
 
@@ -85,6 +95,11 @@ const ScoreCol = styled.div`
   @media (max-width: 600px) {
     font-size: 12px;
   }
+  @media (max-width: 400px) {
+    font-size: 11px;
+    word-wrap:break-word;
+    height: 50px;
+  }
 `;
 const TotalCol = styled.div`
   width: 15%;
@@ -101,6 +116,11 @@ const TotalCol = styled.div`
   }
   @media (max-width: 600px) {
     font-size: 12px;
+  }
+  @media (max-width: 400px) {
+    font-size: 11px;
+    word-wrap:break-word;
+    height: 50px;
   }
 `;
 
@@ -120,5 +140,10 @@ const RatioCol = styled.div`
   @media (max-width: 600px) {
     font-size: 12px;
     word-wrap:break-word;
+  }
+  @media (max-width: 400px) {
+    font-size: 11px;
+    word-wrap:break-word;
+    height: 50px;
   }
 `;

@@ -318,7 +318,7 @@ const Onboard = styled.div`
     font-weight: 200;
     text-align: center;
     @media (max-width: 568px) {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
   & div:first-child {

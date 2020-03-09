@@ -253,6 +253,9 @@ const Onboard = styled.div`
     font-size: 22px;
     font-weight: 200;
     text-align: center;
+    @media (max-width: 568px) {
+      font-size: 14px;
+    }
   }
   & div:first-child {
     border-right: 1px solid black;
