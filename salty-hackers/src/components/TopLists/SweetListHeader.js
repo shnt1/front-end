@@ -116,5 +116,6 @@ const RatioCol = styled.div`
   }
   @media (max-width: 600px) {
     font-size: 12px;
+    word-wrap:break-word;
   }
 `;
