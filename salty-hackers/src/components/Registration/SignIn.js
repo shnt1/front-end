@@ -173,6 +173,9 @@ const MainBox = styled.div`
   border: 1px solid #fd6600;
   border-radius: 5px;
   background-image: linear-gradient(120deg, #f5f6ee, #e2e4d8);
+  @media (max-width: 568px) {
+    max-width: 400px;
+  }
 `;
 
 const InputBox = styled.div`
@@ -180,6 +183,9 @@ const InputBox = styled.div`
   width: 400px;
   @media (max-width: 768px) {
     width: 300px;
+  }
+  @media (max-width: 568px) {
+    width: 200px;
   }
   & input {
     height: 34px;

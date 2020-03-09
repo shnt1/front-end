@@ -248,6 +248,9 @@ const InputBox = styled.div`
   @media (max-width: 768px) {
     width: 300px;
   }
+  @media (max-width: 568px) {
+    width: 200px;
+  }
   & input {
     height: 34px;
     padding: 5px;
