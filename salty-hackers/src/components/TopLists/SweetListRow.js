@@ -43,10 +43,16 @@ const RowBox = styled.div`
     width: 100%;
     font-size: 14px;
   }
+  @media (max-width: 500px) {
+    font-size: 11px;       
+  }
 `;
 
 const RankCol = styled.div`
   width: 15%;
+  @media (max-width: 500px) {
+    width: auto;
+  }
   background: white;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.05);
   padding: 10px;
@@ -56,6 +62,9 @@ const RankCol = styled.div`
 
 const NameCol = styled.div`
   width: 30%;
+  @media (max-width: 500px) {
+    width: auto;
+  }
   background: white;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.05);
   padding: 10px;
@@ -69,6 +78,9 @@ const NameCol = styled.div`
 
 const CommentCol = styled.div`
   width: 15%;
+  @media (max-width: 500px) {
+    width: auto;
+  }
   background: white;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.05);
   padding: 10px;
@@ -78,6 +90,9 @@ const CommentCol = styled.div`
 
 const TotalCol = styled.div`
   width: 15%;
+  @media (max-width: 500px) {
+    width: auto;
+  }
   background: white;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.05);
   padding: 10px;
@@ -87,6 +102,9 @@ const TotalCol = styled.div`
 
 const RatioCol = styled.div`
   width: 16%;
+  @media (max-width: 500px) {
+    width: auto;
+  }
   background: white;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.05);
   padding: 10px;

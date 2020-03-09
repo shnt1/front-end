@@ -255,15 +255,21 @@ const Onboard = styled.div`
     text-align: center;
     @media (max-width: 568px) {
       width: 50%;
-      font-size: 14px;
+      font-size: 18px;
     }
   }
   & div:first-child {
     border-right: 1px solid black;
     margin-left: 80px;
+    @media (max-width: 568px) {
+      margin-left: 10px;
+    }
   }
   & div:last-child {
     margin-right: 80px;
+    @media (max-width: 568px) {
+      margin-right: 10px;
+    }
   }
   & a {
     text-decoration: none;
