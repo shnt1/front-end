@@ -326,13 +326,13 @@ const Onboard = styled.div`
     border-right: 1px solid black;
     margin-left: 80px;
     @media (max-width: 568px) {
-      margin-right: 20px;
+      margin-left: 10px;
     }
   }
   & div:last-child {
     margin-right: 80px;
     @media (max-width: 568px) {
-      margin-left: 20px;
+      margin-right: 10px;
     }
   }
   & a {
