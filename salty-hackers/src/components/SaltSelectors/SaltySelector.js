@@ -24,4 +24,7 @@ const Box = styled.div`
     background-image: linear-gradient(0deg, #fcc5a1, #f8dac5);
     cursor: pointer;
   }
+  @media (max-width: 650px) {
+    font-size: 17px;
+  }
 `;

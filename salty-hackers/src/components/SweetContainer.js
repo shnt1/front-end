@@ -34,4 +34,7 @@ const Container = styled.div`
   width: 80%;
   margin: 180px auto 0;
   position: relative;
+  @media (max-width: 768px) {
+    width: 95%;
+  }
 `;

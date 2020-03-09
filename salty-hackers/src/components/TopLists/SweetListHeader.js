@@ -15,6 +15,9 @@ export default function SweetListHeader(props) {
 
 const ListHeaderBox = styled.div`
   width: 90%;
+  @media (max-width: 868px) {
+    width: 100%;
+  }
   min-height: 60px;
   height: auto;
   padding: 5px;
@@ -37,6 +40,12 @@ const RankCol = styled.div`
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ff3153;
+  @media (max-width: 868px) {
+    font-size: 14px;
+  }
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
 `;
 
 const NameCol = styled.div`
@@ -49,6 +58,12 @@ const NameCol = styled.div`
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ff3153;
+  @media (max-width: 868px) {
+    font-size: 14px;
+  }
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
 `;
 
 const ScoreCol = styled.div`
@@ -61,6 +76,12 @@ const ScoreCol = styled.div`
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ff3153;
+  @media (max-width: 868px) {
+    font-size: 14px;
+  }
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
 `;
 const TotalCol = styled.div`
   width: 15%;
@@ -72,10 +93,16 @@ const TotalCol = styled.div`
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ff3153;
+  @media (max-width: 868px) {
+    font-size: 14px;
+  }
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
 `;
 
 const RatioCol = styled.div`
-  width: 15%;
+  width: 16%;
   height: 60px;
   display: flex;
   align-items: center;
@@ -84,4 +111,10 @@ const RatioCol = styled.div`
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ff3153;
+  @media (max-width: 868px) {
+    font-size: 14px;
+  }
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
 `;

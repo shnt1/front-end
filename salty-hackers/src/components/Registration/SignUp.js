@@ -24,18 +24,18 @@ function SignUp({ touched, errors }) {
         <Form>
           <InputBox>
             <label>
-              <Field type='text' name='username' placeholder='name' />
+              <Field type="text" name="username" placeholder="name" />
               {touched.name && errors.name && (
-                <p className='errors'>{errors.name}</p>
+                <p className="errors">{errors.name}</p>
               )}
             </label>
           </InputBox>
 
           <InputBox>
             <label>
-              <Field type='password' name='password' placeholder='password' />
+              <Field type="password" name="password" placeholder="password" />
               {touched.password && errors.password && (
-                <p className='errors'>{errors.password}</p>
+                <p className="errors">{errors.password}</p>
               )}
             </label>
           </InputBox>
@@ -61,7 +61,7 @@ function SignUp({ touched, errors }) {
               By clicking here, you accept our terms of service.
             </label>
           </CheckContainer> */}
-          <SubmitButton type='submit'>Sign Up</SubmitButton>
+          <SubmitButton type="submit">Sign Up</SubmitButton>
         </Form>
       </MainBox>
     </Container>
@@ -222,9 +222,11 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 600px;
-  min-width: 350px;
+  max-width: 55%;
   font-weight: 200;
+  @media (max-width: 900px) {
+    max-width: 70%;
+  }
 `;
 
 const MainBox = styled.div`
@@ -233,6 +235,7 @@ const MainBox = styled.div`
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  justify-items: center;
   background: #f5f6ee;
   border: 1px solid #fd6600;
   border-radius: 5px;
@@ -241,7 +244,10 @@ const MainBox = styled.div`
 
 const InputBox = styled.div`
   padding: 15px 0;
-  width: 430px;
+  width: 400px;
+  @media (max-width: 768px) {
+    width: 300px;
+  }
   & input {
     height: 34px;
     padding: 5px;

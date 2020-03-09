@@ -29,6 +29,7 @@ export default function SweetListRow(props) {
 
 const RowBox = styled.div`
   width: 90%;
+  
   min-height: 40px;
   height: auto;
   padding: 5px;
@@ -38,6 +39,10 @@ const RowBox = styled.div`
   justify-content: space-evenly;
   align-items: center;
   font-size: 16px;
+  @media (max-width: 868px) {
+    width: 100%;
+    font-size: 14px;
+  }
 `;
 
 const RankCol = styled.div`
@@ -81,7 +86,7 @@ const TotalCol = styled.div`
 `;
 
 const RatioCol = styled.div`
-  width: 15%;
+  width: 16%;
   background: white;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.05);
   padding: 10px;

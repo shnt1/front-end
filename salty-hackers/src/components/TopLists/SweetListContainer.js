@@ -24,8 +24,9 @@ const ListBox = styled.div`
   display: flex;
   flex-flow: column nowrap;
   padding: 20px;
-  // position: relative;
-  // top: 260px;
+  @media (max-width: 868px) {
+    padding: 5px;
+  }
   align-items: center;
   border-radius: 5px;
   border: 1px solid #ff3153;

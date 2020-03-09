@@ -155,9 +155,11 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 600px;
-  min-width: 350px;
+  max-width: 55%;
   font-weight: 200;
+  @media (max-width: 900px) {
+    max-width: 70%;
+  }
 `;
 
 const MainBox = styled.div`
@@ -166,6 +168,7 @@ const MainBox = styled.div`
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  justify-items: center;
   background: #f5f6ee;
   border: 1px solid #fd6600;
   border-radius: 5px;
@@ -174,7 +177,10 @@ const MainBox = styled.div`
 
 const InputBox = styled.div`
   padding: 15px 0;
-  width: 430px;
+  width: 400px;
+  @media (max-width: 768px) {
+    width: 300px;
+  }
   & input {
     height: 34px;
     padding: 5px;
@@ -183,7 +189,6 @@ const InputBox = styled.div`
     font-size: 24px;
     font-weight: 200;
     width: 100%;
-
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.09), 0 2px 2px rgba(0, 0, 0, 0.03);
     :focus {
       outline: none;
