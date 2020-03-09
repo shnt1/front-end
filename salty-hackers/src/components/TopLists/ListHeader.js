@@ -52,7 +52,6 @@ const RankCol = styled.div`
   @media (max-width: 500px) {
     font-size: 11px;
     word-wrap:break-word;
-    height: auto;
     width: auto;
   }
 `;
@@ -76,7 +75,6 @@ const NameCol = styled.div`
   @media (max-width: 500px) {
     font-size: 11px;
     word-wrap:break-word;
-    height: auto;
     width: auto;
   }
 `;
@@ -100,7 +98,6 @@ const ScoreCol = styled.div`
   @media (max-width: 500px) {
     font-size: 11px;
     word-wrap:break-word;
-    height: auto;
     width: auto;
   }
 `;
@@ -123,7 +120,6 @@ const TotalCol = styled.div`
   @media (max-width: 500px) {
     font-size: 11px;
     word-wrap:break-word;
-    height: auto;
     width: auto;
   }
 `;
@@ -148,7 +144,6 @@ const RatioCol = styled.div`
   @media (max-width: 500px) {
     font-size: 11px;
     word-wrap:break-word;
-    height: auto;
     width: auto;
   }
 `;
